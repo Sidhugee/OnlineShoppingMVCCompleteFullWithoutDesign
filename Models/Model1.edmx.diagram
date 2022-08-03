@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="842eb72fb8bc42f3ae631d2d2e9d22c7" Name="Diagram1">
+        <EntityTypeShape EntityType="ShoppingStoreEcommerceModel.Tbl_Product" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoppingStoreEcommerceModel.User" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ShoppingStoreEcommerceModel.UserRole" Width="1.5" PointX="5.625" PointY="5" />
+        <AssociationConnector Association="ShoppingStoreEcommerceModel.FK_UserRole_User" />
+        <AssociationConnector Association="ShoppingStoreEcommerceModel.FK_UserRole_UserRole" />
+        <AssociationConnector Association="ShoppingStoreEcommerceModel.FK_UserRole_UserRole1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

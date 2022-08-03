@@ -1,0 +1,80 @@
+﻿@using OnlineShopping.Models;
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<h2>Checkout</h2>
+<style>
+    .styled-table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+        .styled-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+            .styled-table tbody tr:nth-of-type(even) {
+                background-color: #f3f3f3;
+            }
+
+            .styled-table tbody tr:last-of-type {
+                border-bottom: 2px solid #009879;
+            }
+            .styled-table tbody tr.active-row {
+                font-weight: bold;
+                color: #009879;
+            }
+            .Checkout-Back a{
+                text-decoration: none;
+                color:red;
+                font-weight: bold;
+            }
+           
+</style>
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>ProductId</th>
+            <th>ProductName</th>
+            <th>Quantity</th>
+            <th>CreatedDate</th>
+            <th>IsActive</th>
+            <th>IsDelete</th>
+            <th>IsFeatured</th>
+            <th>ModifiedDate</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Item item in (List<Item>)Session["cart"])
+        {
+            <tr>
+                <td>@item.Product.ProductId</td>
+                <td>@item.Product.ProductName</td>
+                <td>@item.Product.Quantity</td>
+                <td>@item.Product.CreatedDate</td>
+                <td>@item.Product.IsActive</td>
+                <td>@item.Product.IsDelete</td>
+                <td>@item.Product.IsFeatured</td>
+                <td>@item.Product.ModifiedDate</td>
+                </tr>
+
+                }
+            
+
+        </tbody>
+</table>
+<p class="Checkout-Back"><i> @Html.ActionLink("Back", "Index", "Product") </i></p>
